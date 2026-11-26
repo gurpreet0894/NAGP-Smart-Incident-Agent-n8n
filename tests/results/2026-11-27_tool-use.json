@@ -1,0 +1,422 @@
+[
+  {
+    "id": "S1",
+    "group": "skip",
+    "name": "Spelling mistake on the homepage banner",
+    "run": 1,
+    "seconds": 11,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Catalog & Search owns product and site listing content, making it the closest fit in the available directory. History was not checked because this is a cosmetic spelling mistake.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S1",
+    "group": "skip",
+    "name": "Spelling mistake on the homepage banner",
+    "run": 2,
+    "seconds": 11,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Catalog & Search owns product and listing content, making it the closest fit for a homepage banner text issue. History was not checked because this is a cosmetic, one-off issue.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S1",
+    "group": "skip",
+    "name": "Spelling mistake on the homepage banner",
+    "run": 3,
+    "seconds": 11,
+    "status": "routed",
+    "team": "Platform & Infrastructure",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "This is a cosmetic homepage wording issue, and the directory has no dedicated content team, so Platform & Infrastructure is the closest website-owning team. History was not checked because this is a cosmetic, one-off issue.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S2",
+    "group": "skip",
+    "name": "Customer question about opening hours",
+    "run": 1,
+    "seconds": 10,
+    "status": "routed",
+    "team": "Orders & Fulfilment",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Orders & Fulfilment owns warehouse dispatch and operations. This is a single customer’s question, so incident history was not checked.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S2",
+    "group": "skip",
+    "name": "Customer question about opening hours",
+    "run": 2,
+    "seconds": 11,
+    "status": "routed",
+    "team": "Orders & Fulfilment",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Orders & Fulfilment owns warehouse operations. History was not checked because this is a single customer’s question, not a production incident.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S2",
+    "group": "skip",
+    "name": "Customer question about opening hours",
+    "run": 3,
+    "seconds": 10,
+    "status": "routed",
+    "team": "Orders & Fulfilment",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Orders & Fulfilment owns warehouse operations. History was not checked because this is a one-off customer question, not a production incident.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S3",
+    "group": "skip",
+    "name": "Feature request from a colleague",
+    "run": 1,
+    "seconds": 11,
+    "status": "routed_with_warnings",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Payments Backend owns checkout. History was not checked because this is a feature request, not a reported failure or outage.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S3",
+    "group": "skip",
+    "name": "Feature request from a colleague",
+    "run": 2,
+    "seconds": 11,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Payments Backend owns checkout, so it is the closest fit for a checkout feature suggestion. History was not checked because this is a feature request, not a reported failure.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S3",
+    "group": "skip",
+    "name": "Feature request from a colleague",
+    "run": 3,
+    "seconds": 11,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Payments Backend owns checkout, so it is the closest team for a checkout feature suggestion. History was not checked because this is a feature request, not a reported failure.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S4",
+    "group": "skip",
+    "name": "Product description wording change",
+    "run": 1,
+    "seconds": 11,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Catalog & Search owns product listings. History was not checked because this is a one-customer content change request, not a production incident.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S4",
+    "group": "skip",
+    "name": "Product description wording change",
+    "run": 2,
+    "seconds": 10,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Catalog & Search owns product listings. History was not checked because this is a one-customer content request, not a production failure.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "S4",
+    "group": "skip",
+    "name": "Product description wording change",
+    "run": 3,
+    "seconds": 10,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory"
+    ],
+    "history_tool_called": false,
+    "matched_incident_id": "None",
+    "why": "Catalog & Search owns product listings. History was not checked because this is a one-customer content change request, not a production incident.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C1",
+    "group": "call",
+    "name": "Coupon rejected at checkout",
+    "run": 1,
+    "seconds": 14,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "None",
+    "why": "Payments Backend owns checkout issues, so it is the best fit for customers unable to place orders. I checked history because this is a checkout failure, but none of the past incidents match a rejected discount code.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C1",
+    "group": "call",
+    "name": "Coupon rejected at checkout",
+    "run": 2,
+    "seconds": 15,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "None",
+    "why": "Payments Backend owns checkout failures, so it is the best team to investigate customers being blocked at checkout. I checked history because this is a recurring checkout failure symptom, but none of the past incidents matched the rejected discount code.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C1",
+    "group": "call",
+    "name": "Coupon rejected at checkout",
+    "run": 3,
+    "seconds": 14,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "None",
+    "why": "Payments Backend owns checkout issues, so it is the best fit for customers unable to place orders at checkout. I checked history because this is a recurring checkout failure, but none of the past incidents match a rejected discount code.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C2",
+    "group": "call",
+    "name": "Wrong price on one product",
+    "run": 1,
+    "seconds": 14,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "INC-072",
+    "why": "Catalog & Search owns product listings and incorrect prices. I checked incident history because wrong product prices can match a prior incident; INC-072 involved many products, so it is related but not an exact match.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C2",
+    "group": "call",
+    "name": "Wrong price on one product",
+    "run": 2,
+    "seconds": 14,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "INC-072",
+    "why": "Catalog & Search owns product listings and incorrect displayed prices. I checked history because wrong product prices can reflect a recurring data issue; INC-072 is a close match.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C2",
+    "group": "call",
+    "name": "Wrong price on one product",
+    "run": 3,
+    "seconds": 15,
+    "status": "routed",
+    "team": "Catalog & Search",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "INC-072",
+    "why": "Catalog & Search owns product listings and incorrect prices. I checked history because wrong product prices could match a prior incident; INC-072 involved many products, so it is relevant but not an exact match to this single jacket.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C3",
+    "group": "call",
+    "name": "Order confirmation emails not arriving",
+    "run": 1,
+    "seconds": 15,
+    "status": "routed",
+    "team": "Orders & Fulfilment",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "None",
+    "why": "Orders & Fulfilment owns order status and confirmation emails. I checked history because this is a recurring email-delivery symptom, but no past incident matched order confirmation emails.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C3",
+    "group": "call",
+    "name": "Order confirmation emails not arriving",
+    "run": 2,
+    "seconds": 14,
+    "status": "routed",
+    "team": "Orders & Fulfilment",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "None",
+    "why": "Orders & Fulfilment owns order status and confirmation emails. I checked incident history because this is a recurring-type email failure, but none of the past incidents matched missing order confirmation emails.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C3",
+    "group": "call",
+    "name": "Order confirmation emails not arriving",
+    "run": 3,
+    "seconds": 15,
+    "status": "routed",
+    "team": "Orders & Fulfilment",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "None",
+    "why": "Orders & Fulfilment owns order status and confirmation emails. I checked history because this is a recurring service symptom, but no past incident matched missing order confirmation emails.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C4",
+    "group": "call",
+    "name": "Checkout page very slow",
+    "run": 1,
+    "seconds": 15,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "INC-101",
+    "why": "Payments Backend owns checkout and payment processing, and INC-101 is a close match for checkout failures. I checked incident history because these timeout symptoms could match a prior production incident.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C4",
+    "group": "call",
+    "name": "Checkout page very slow",
+    "run": 2,
+    "seconds": 14,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "INC-101",
+    "why": "Payments Backend owns checkout and payment processing, and INC-101 is a close match for checkout failures. History was checked because this is a production timeout affecting many customers.",
+    "ok": true,
+    "problem": null
+  },
+  {
+    "id": "C4",
+    "group": "call",
+    "name": "Checkout page very slow",
+    "run": 3,
+    "seconds": 15,
+    "status": "routed",
+    "team": "Payments Backend",
+    "tools_called": [
+      "team_directory",
+      "incident_history"
+    ],
+    "history_tool_called": true,
+    "matched_incident_id": "INC-101",
+    "why": "Payments Backend owns checkout and payment processing, and INC-101 is a prior checkout failure resolved by that team. I checked incident history because checkout timeouts may match a past production issue.",
+    "ok": true,
+    "problem": null
+  }
+]

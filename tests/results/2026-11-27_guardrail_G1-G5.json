@@ -1,0 +1,254 @@
+[
+  {
+    "case": {
+      "id": "G1",
+      "name": "Bad team name on the first attempt only: recovers on retry 1",
+      "input": {
+        "error_summary": "Several customers called and emailed to say they cannot pay for their orders. One customer (priya.sharma@example.com, phone +91 98765 43210) said her card 4111 1111 1111 1111 keeps getting rejected at the last step.",
+        "specific_error": "Something went wrong",
+        "users_affected": 600,
+        "minutes_since_start": 25,
+        "test_mode": "bad_team",
+        "fail_attempts": 1
+      },
+      "expect": {
+        "status": "routed",
+        "attempts": 2,
+        "team": "Payments Backend",
+        "notesInclude": "1 retry"
+      }
+    },
+    "seconds": 29,
+    "response": {
+      "Send this to": "Payments Backend",
+      "Contact": "payments-oncall@shopnow.example (#payments-oncall)",
+      "Do this first": "Contact payments-oncall@shopnow.example now and post in #payments-oncall: about 600 customers cannot complete payment and see “Something went wrong” at checkout for 25 minutes, matching INC-101. Ask the team to investigate and consider whether rolling back the latest payment release is appropriate.",
+      "Past incident": "INC-101, resolved by Payments Backend (cause: Payment configuration deployed with a wrong setting; fix: Rolled back the latest payment release)",
+      "Tell customers": "We’re sorry you’re having trouble completing your payment. Our team is working on the issue, and we’ll share an update as soon as we have one.",
+      "Why": "Payments Backend owns payment processing and checkout, and the symptoms match INC-101, which was resolved by Payments Backend. I checked incident history because this is a widespread payment failure.",
+      "Seriousness": "HIGH, ongoing (600 customers, 25 min)",
+      "Notes": "The assistant needed 1 retry to pass the automatic checks. | 3 sensitive item(s) were masked before analysis (EMAIL x1, CARD/NUMBER x1, PHONE x1).",
+      "status": "routed",
+      "team": "Payments Backend",
+      "contact": "payments-oncall@shopnow.example",
+      "channel": "#payments-oncall",
+      "matched_incident_id": "INC-101",
+      "severity_hint": "high",
+      "urgency": "ongoing",
+      "attempts_used": 2,
+      "tools_called": [
+        "team_directory",
+        "incident_history"
+      ],
+      "history_tool_called": true,
+      "redacted_error_summary": "Several customers called and emailed to say they cannot pay for their orders. One customer ([EMAIL], phone [PHONE]) said her card [CARD/NUMBER] keeps getting rejected at the last step.",
+      "redaction_count": 3,
+      "warnings": [
+        "The assistant needed 1 retry to pass the automatic checks.",
+        "3 sensitive item(s) were masked before analysis (EMAIL x1, CARD/NUMBER x1, PHONE x1)."
+      ],
+      "summary": "Send this to: Payments Backend\nContact: payments-oncall@shopnow.example (#payments-oncall)\nDo this first: Contact payments-oncall@shopnow.example now and post in #payments-oncall: about 600 customers cannot complete payment and see “Something went wrong” at checkout for 25 minutes, matching INC-101. Ask the team to investigate and consider whether rolling back the latest payment release is appropriate.\nPast incident: INC-101, resolved by Payments Backend (cause: Payment configuration deployed with a wrong setting; fix: Rolled back the latest payment release)\nTell customers: We’re sorry you’re having trouble completing your payment. Our team is working on the issue, and we’ll share an update as soon as we have one.\nWhy: Payments Backend owns payment processing and checkout, and the symptoms match INC-101, which was resolved by Payments Backend. I checked incident history because this is a widespread payment failure.\nSeriousness: HIGH, ongoing (600 customers, 25 min)\nNotes: The assistant needed 1 retry to pass the automatic checks. | 3 sensitive item(s) were masked before analysis (EMAIL x1, CARD/NUMBER x1, PHONE x1)."
+    },
+    "problems": [],
+    "pass": true
+  },
+  {
+    "case": {
+      "id": "G2",
+      "name": "Invented incident ID twice: recovers on retry 2 (last allowed attempt)",
+      "input": {
+        "error_summary": "Customers say search returns nothing for any word, but product pages open fine.",
+        "specific_error": "No results found",
+        "users_affected": 300,
+        "minutes_since_start": 12,
+        "test_mode": "fake_incident",
+        "fail_attempts": 2
+      },
+      "expect": {
+        "status": "routed",
+        "attempts": 3,
+        "team": "Catalog & Search",
+        "notesInclude": "2 retries"
+      }
+    },
+    "seconds": 49,
+    "response": {
+      "Send this to": "Catalog & Search",
+      "Contact": "catalog-search-oncall@shopnow.example (#catalog-search)",
+      "Do this first": "Escalate to Catalog & Search by contacting catalog-search-oncall@shopnow.example and posting in #catalog-search. Report that about 300 customers get no results for any word while product pages still open, and note that this matches INC-094, which was resolved by restoring the previous search index and rerunning the rebuild.",
+      "Past incident": "INC-094, resolved by Catalog & Search (cause: Search index rebuild job failed and left the index empty; fix: Restored the previous search index and re-ran the rebuild)",
+      "Tell customers": "We’re sorry, search isn’t returning results right now. Our team is investigating, and we’ll share updates as they become available.",
+      "Why": "Catalog & Search owns search, and the symptoms closely match INC-094. I checked incident history because this is a search failure that has happened before.",
+      "Seriousness": "MEDIUM, new (300 customers, 12 min)",
+      "Notes": "The assistant needed 2 retries to pass the automatic checks.",
+      "status": "routed",
+      "team": "Catalog & Search",
+      "contact": "catalog-search-oncall@shopnow.example",
+      "channel": "#catalog-search",
+      "matched_incident_id": "INC-094",
+      "severity_hint": "medium",
+      "urgency": "new",
+      "attempts_used": 3,
+      "tools_called": [
+        "team_directory",
+        "incident_history"
+      ],
+      "history_tool_called": true,
+      "redacted_error_summary": "Customers say search returns nothing for any word, but product pages open fine.",
+      "redaction_count": 0,
+      "warnings": [
+        "The assistant needed 2 retries to pass the automatic checks."
+      ],
+      "summary": "Send this to: Catalog & Search\nContact: catalog-search-oncall@shopnow.example (#catalog-search)\nDo this first: Escalate to Catalog & Search by contacting catalog-search-oncall@shopnow.example and posting in #catalog-search. Report that about 300 customers get no results for any word while product pages still open, and note that this matches INC-094, which was resolved by restoring the previous search index and rerunning the rebuild.\nPast incident: INC-094, resolved by Catalog & Search (cause: Search index rebuild job failed and left the index empty; fix: Restored the previous search index and re-ran the rebuild)\nTell customers: We’re sorry, search isn’t returning results right now. Our team is investigating, and we’ll share updates as they become available.\nWhy: Catalog & Search owns search, and the symptoms closely match INC-094. I checked incident history because this is a search failure that has happened before.\nSeriousness: MEDIUM, new (300 customers, 12 min)\nNotes: The assistant needed 2 retries to pass the automatic checks."
+    },
+    "problems": [],
+    "pass": true
+  },
+  {
+    "case": {
+      "id": "G3",
+      "name": "Permanently bad team name: 2 retries, then MANUAL ROUTING NEEDED",
+      "input": {
+        "error_summary": "Several customers cannot pay for their orders and see an error at the last step.",
+        "specific_error": "Something went wrong",
+        "users_affected": 600,
+        "minutes_since_start": 25,
+        "test_mode": "bad_team",
+        "fail_attempts": 99
+      },
+      "expect": {
+        "status": "manual_routing_required",
+        "attempts": 3,
+        "failuresInclude": "exact team name"
+      }
+    },
+    "seconds": 45,
+    "response": {
+      "Result": "MANUAL ROUTING NEEDED",
+      "What to do": "Ask a team lead or the duty manager to route this incident. The assistant could not give a verified recommendation after 3 attempts (1 try + 2 retries).",
+      "What was reported": "Several customers cannot pay for their orders and see an error at the last step.",
+      "Exact error": "Something went wrong",
+      "Seriousness": "HIGH, ongoing (600 customers, 25 min)",
+      "Why it stopped": "primary_team \"Payments\" is not an exact team name in the Team Directory. Valid names: \"Payments Backend\", \"Catalog & Search\", \"Orders & Fulfilment\", \"Accounts & Login\", \"Platform & Infrastructure\".",
+      "status": "manual_routing_required",
+      "severity_hint": "high",
+      "urgency": "ongoing",
+      "tools_called": [
+        "team_directory",
+        "incident_history"
+      ],
+      "redacted_error_summary": "Several customers cannot pay for their orders and see an error at the last step.",
+      "failures": [
+        "primary_team \"Payments\" is not an exact team name in the Team Directory. Valid names: \"Payments Backend\", \"Catalog & Search\", \"Orders & Fulfilment\", \"Accounts & Login\", \"Platform & Infrastructure\"."
+      ],
+      "attempts": 3,
+      "summary": "Result: MANUAL ROUTING NEEDED\nWhat to do: Ask a team lead or the duty manager to route this incident. The assistant could not give a verified recommendation after 3 attempts (1 try + 2 retries).\nWhat was reported: Several customers cannot pay for their orders and see an error at the last step.\nExact error: Something went wrong\nSeriousness: HIGH, ongoing (600 customers, 25 min)\nWhy it stopped: primary_team \"Payments\" is not an exact team name in the Team Directory. Valid names: \"Payments Backend\", \"Catalog & Search\", \"Orders & Fulfilment\", \"Accounts & Login\", \"Platform & Infrastructure\"."
+    },
+    "problems": [],
+    "pass": true
+  },
+  {
+    "case": {
+      "id": "G4",
+      "name": "Passive 'just monitor' action on a HIGH-severity incident: rejected, then recovers",
+      "input": {
+        "error_summary": "Almost every page is very slow or shows an error for everyone, from the home page to checkout.",
+        "specific_error": "503 Service Unavailable",
+        "users_affected": 2000,
+        "minutes_since_start": 10,
+        "test_mode": "passive_action",
+        "fail_attempts": 1
+      },
+      "expect": {
+        "status": "routed",
+        "attempts": 2,
+        "team": "Platform & Infrastructure",
+        "notesInclude": "1 retry"
+      }
+    },
+    "seconds": 30,
+    "response": {
+      "Send this to": "Platform & Infrastructure",
+      "Contact": "platform-oncall@shopnow.example (#platform-oncall)",
+      "Do this first": "Contact platform-oncall@shopnow.example and post in #platform-oncall now: about 2,000 customers are seeing slow pages or 503 errors across the site, reported 10 minutes ago. This matches INC-049, which was resolved by adding capacity and fixing autoscaling.",
+      "Past incident": "INC-049, resolved by Platform & Infrastructure (cause: Web servers did not scale up during a traffic spike; fix: Added capacity manually and fixed the autoscaling rule)",
+      "Tell customers": "We’re aware that many parts of the site are slow or unavailable and our team is investigating. We’ll share updates as we have them.",
+      "Why": "Platform & Infrastructure owns site availability and performance, including 503 errors across many areas. I checked incident history and found INC-049 with closely matching symptoms.",
+      "Seriousness": "HIGH, new (2000 customers, 10 min)",
+      "Notes": "The assistant needed 1 retry to pass the automatic checks.",
+      "status": "routed",
+      "team": "Platform & Infrastructure",
+      "contact": "platform-oncall@shopnow.example",
+      "channel": "#platform-oncall",
+      "matched_incident_id": "INC-049",
+      "severity_hint": "high",
+      "urgency": "new",
+      "attempts_used": 2,
+      "tools_called": [
+        "team_directory",
+        "incident_history"
+      ],
+      "history_tool_called": true,
+      "redacted_error_summary": "Almost every page is very slow or shows an error for everyone, from the home page to checkout.",
+      "redaction_count": 0,
+      "warnings": [
+        "The assistant needed 1 retry to pass the automatic checks."
+      ],
+      "summary": "Send this to: Platform & Infrastructure\nContact: platform-oncall@shopnow.example (#platform-oncall)\nDo this first: Contact platform-oncall@shopnow.example and post in #platform-oncall now: about 2,000 customers are seeing slow pages or 503 errors across the site, reported 10 minutes ago. This matches INC-049, which was resolved by adding capacity and fixing autoscaling.\nPast incident: INC-049, resolved by Platform & Infrastructure (cause: Web servers did not scale up during a traffic spike; fix: Added capacity manually and fixed the autoscaling rule)\nTell customers: We’re aware that many parts of the site are slow or unavailable and our team is investigating. We’ll share updates as we have them.\nWhy: Platform & Infrastructure owns site availability and performance, including 503 errors across many areas. I checked incident history and found INC-049 with closely matching symptoms.\nSeriousness: HIGH, new (2000 customers, 10 min)\nNotes: The assistant needed 1 retry to pass the automatic checks."
+    },
+    "problems": [],
+    "pass": true
+  },
+  {
+    "case": {
+      "id": "G5",
+      "name": "Tone does not fit a prolonged incident: decision validation raises a warning",
+      "input": {
+        "error_summary": "A few customers say their bank shows two charges for one order.",
+        "specific_error": "",
+        "users_affected": 40,
+        "minutes_since_start": 90,
+        "test_mode": "bad_tone"
+      },
+      "expect": {
+        "status": "routed_with_warnings",
+        "attempts": 1,
+        "team": "Payments Backend",
+        "notesInclude": "Urgency is \"prolonged\" but tone is \"calm_informational\""
+      }
+    },
+    "seconds": 13,
+    "response": {
+      "Send this to": "Payments Backend",
+      "Contact": "payments-oncall@shopnow.example (#payments-oncall)",
+      "Do this first": "Escalate to payments-oncall@shopnow.example and post in #payments-oncall now. Report that about 40 customers have seen duplicate charges for one order over the past 90 minutes, matching INC-087.",
+      "Past incident": "INC-087, resolved by Payments Backend (cause: Duplicate payment requests after a timeout; fix: Fixed the duplicate request handling and refunded affected customers)",
+      "Tell customers": "I’m sorry you’re seeing a duplicate charge. Our payments team is investigating, and we’ll share an update as soon as we have one.",
+      "Why": "Payments Backend owns payment processing and reports of customers charged twice. I checked incident history and found INC-087 with matching symptoms, resolved by Payments Backend.",
+      "Seriousness": "MEDIUM, prolonged (40 customers, 90 min)",
+      "Notes": "Urgency is \"prolonged\" but tone is \"calm_informational\" (expected one of: apologetic_urgent). | Second-opinion review: The escalation is appropriate for medium severity, but prolonged incidents require an apologetic, urgent tone.",
+      "status": "routed_with_warnings",
+      "team": "Payments Backend",
+      "contact": "payments-oncall@shopnow.example",
+      "channel": "#payments-oncall",
+      "matched_incident_id": "INC-087",
+      "severity_hint": "medium",
+      "urgency": "prolonged",
+      "attempts_used": 1,
+      "tools_called": [
+        "team_directory",
+        "incident_history"
+      ],
+      "history_tool_called": true,
+      "redacted_error_summary": "A few customers say their bank shows two charges for one order.",
+      "redaction_count": 0,
+      "warnings": [
+        "Urgency is \"prolonged\" but tone is \"calm_informational\" (expected one of: apologetic_urgent).",
+        "Second-opinion review: The escalation is appropriate for medium severity, but prolonged incidents require an apologetic, urgent tone."
+      ],
+      "summary": "Send this to: Payments Backend\nContact: payments-oncall@shopnow.example (#payments-oncall)\nDo this first: Escalate to payments-oncall@shopnow.example and post in #payments-oncall now. Report that about 40 customers have seen duplicate charges for one order over the past 90 minutes, matching INC-087.\nPast incident: INC-087, resolved by Payments Backend (cause: Duplicate payment requests after a timeout; fix: Fixed the duplicate request handling and refunded affected customers)\nTell customers: I’m sorry you’re seeing a duplicate charge. Our payments team is investigating, and we’ll share an update as soon as we have one.\nWhy: Payments Backend owns payment processing and reports of customers charged twice. I checked incident history and found INC-087 with matching symptoms, resolved by Payments Backend.\nSeriousness: MEDIUM, prolonged (40 customers, 90 min)\nNotes: Urgency is \"prolonged\" but tone is \"calm_informational\" (expected one of: apologetic_urgent). | Second-opinion review: The escalation is appropriate for medium severity, but prolonged incidents require an apologetic, urgent tone."
+    },
+    "problems": [],
+    "pass": true
+  }
+]

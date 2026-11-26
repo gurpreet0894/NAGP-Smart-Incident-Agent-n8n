@@ -1,0 +1,27 @@
+[
+  {
+    "id": "G1", "name": "Bad team name on the first attempt only: recovers on retry 1",
+    "input": { "error_summary": "Several customers called and emailed to say they cannot pay for their orders. One customer (priya.sharma@example.com, phone +91 98765 43210) said her card 4111 1111 1111 1111 keeps getting rejected at the last step.", "specific_error": "Something went wrong", "users_affected": 600, "minutes_since_start": 25, "test_mode": "bad_team", "fail_attempts": 1 },
+    "expect": { "status": "routed", "attempts": 2, "team": "Payments Backend", "notesInclude": "1 retry" }
+  },
+  {
+    "id": "G2", "name": "Invented incident ID twice: recovers on retry 2 (last allowed attempt)",
+    "input": { "error_summary": "Customers say search returns nothing for any word, but product pages open fine.", "specific_error": "No results found", "users_affected": 300, "minutes_since_start": 12, "test_mode": "fake_incident", "fail_attempts": 2 },
+    "expect": { "status": "routed", "attempts": 3, "team": "Catalog & Search", "notesInclude": "2 retries" }
+  },
+  {
+    "id": "G3", "name": "Permanently bad team name: 2 retries, then MANUAL ROUTING NEEDED",
+    "input": { "error_summary": "Several customers cannot pay for their orders and see an error at the last step.", "specific_error": "Something went wrong", "users_affected": 600, "minutes_since_start": 25, "test_mode": "bad_team", "fail_attempts": 99 },
+    "expect": { "status": "manual_routing_required", "attempts": 3, "failuresInclude": "exact team name" }
+  },
+  {
+    "id": "G4", "name": "Passive 'just monitor' action on a HIGH-severity incident: rejected, then recovers",
+    "input": { "error_summary": "Almost every page is very slow or shows an error for everyone, from the home page to checkout.", "specific_error": "503 Service Unavailable", "users_affected": 2000, "minutes_since_start": 10, "test_mode": "passive_action", "fail_attempts": 1 },
+    "expect": { "status": "routed", "attempts": 2, "team": "Platform & Infrastructure", "notesInclude": "1 retry" }
+  },
+  {
+    "id": "G5", "name": "Tone does not fit a prolonged incident: decision validation raises a warning",
+    "input": { "error_summary": "A few customers say their bank shows two charges for one order.", "specific_error": "", "users_affected": 40, "minutes_since_start": 90, "test_mode": "bad_tone" },
+    "expect": { "status": "routed_with_warnings", "attempts": 1, "team": "Payments Backend", "notesInclude": "Urgency is \"prolonged\" but tone is \"calm_informational\"" }
+  }
+]

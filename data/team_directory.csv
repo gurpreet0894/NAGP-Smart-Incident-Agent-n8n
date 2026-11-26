@@ -1,0 +1,6 @@
+team,owns,typical_symptoms_reported,on_call_contact,escalation_channel
+Payments Backend,"Payment processing, checkout, refunds","Checkout fails or shows an error at the payment step; card payments declined; customers charged twice; refund not received; order stuck at payment",payments-oncall@shopnow.example,#payments-oncall
+Catalog & Search,"Product listings, search, recommendations","Search returns nothing or the wrong results; products missing or showing the wrong price or image; recommendations look broken",catalog-search-oncall@shopnow.example,#catalog-search
+Orders & Fulfilment,"Order status, shipping labels, warehouse dispatch, delivery tracking","Order stays in processing; no confirmation or tracking email; shipping label not created; wrong delivery status shown; order dispatched late",orders-oncall@shopnow.example,#orders-fulfilment
+Accounts & Login,"Customer sign-in, registration, password reset, profiles","Customers cannot log in; password reset email never arrives; account locked; sign-up fails; profile details missing",accounts-oncall@shopnow.example,#accounts-login
+Platform & Infrastructure,"Website availability, hosting, performance, networking","Whole site is slow or down; pages show 503 or 504; images or pages fail to load for everyone; errors across many different areas at once",platform-oncall@shopnow.example,#platform-oncall

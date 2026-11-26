@@ -1,0 +1,8 @@
+incident_id,symptoms_reported,resolving_team,root_cause,resolution
+INC-101,"Checkout failing at the payment step; customers see ""Something went wrong""",Payments Backend,Payment configuration deployed with a wrong setting,Rolled back the latest payment release
+INC-087,Customers charged twice for one order,Payments Backend,Duplicate payment requests after a timeout,Fixed the duplicate request handling and refunded affected customers
+INC-094,Search returns no results for any keyword; product pages still load,Catalog & Search,Search index rebuild job failed and left the index empty,Restored the previous search index and re-ran the rebuild
+INC-072,Many products showing the wrong price on the website,Catalog & Search,Bulk price import loaded a file with the wrong currency column,Reverted the price import and reloaded the correct file
+INC-066,Customers say the password reset email never arrives,Accounts & Login,Email provider rate limit reached after a marketing campaign,Raised the rate limit and re-sent queued reset emails
+INC-058,Orders stuck in processing and no shipping labels created,Orders & Fulfilment,Label service credentials expired,Renewed the credentials and re-queued the stuck orders
+INC-049,Whole site very slow with 503 errors on many pages,Platform & Infrastructure,Web servers did not scale up during a traffic spike,Added capacity manually and fixed the autoscaling rule
